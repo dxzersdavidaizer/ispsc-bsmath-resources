@@ -1,0 +1,36 @@
+// ============================================================================
+// PAGES - Instructors page styles
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- INSTRUCTOR GRID ----
+.instructor-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// ---- WHY GRID ----
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

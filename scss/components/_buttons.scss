@@ -1,0 +1,146 @@
+// ============================================================================
+// BUTTONS - Button component with variants
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- Base Button Styles ----
+.btn {
+  display: inline-block;
+  padding: $space-md $space-lg;
+  font-family: $ff-body;
+  font-size: $fs-base;
+  font-weight: $fw-bold;
+  border: none;
+  border-radius: $br-lg;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  user-select: none;
+  transition: all $duration-base ease-in-out;
+  will-change: transform, box-shadow, background-color;
+  letter-spacing: 0.5px;
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// ---- PRIMARY BUTTON ----
+.btn-primary {
+  background-color: $color-primary;
+  color: $text-inverse;
+  box-shadow: 0 4px 15px rgba($color-primary, 0.4);
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-deep;
+    box-shadow: 0 8px 25px rgba($color-primary, 0.6);
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 3px solid $color-primary;
+    outline-offset: 3px;
+  }
+}
+
+// ---- SECONDARY BUTTON ----
+.btn-secondary {
+  background-color: $color-secondary;
+  color: $text-inverse;
+  box-shadow: 0 4px 15px rgba($color-secondary, 0.4);
+
+  &:hover:not(:disabled) {
+    background-color: $color-secondary-deep;
+    box-shadow: 0 8px 25px rgba($color-secondary, 0.6);
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 3px solid $color-secondary;
+    outline-offset: 3px;
+  }
+}
+
+// Make buttons work as links
+a.btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
+// ---- OUTLINE BUTTON (Neutral) ----
+.btn-outline {
+  background-color: transparent;
+  color: $text-main;
+  border: 1px solid $text-main;
+  box-shadow: 0 2px 8px rgba($text-main, 0.1);
+
+  &:hover:not(:disabled) {
+    background-color: $text-main;
+    color: $text-inverse;
+    box-shadow: 0 6px 20px rgba($text-main, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:focus {
+    outline: 3px solid $text-main;
+    outline-offset: 3px;
+  }
+}
+
+// ---- TEXT BUTTON (Minimal) ----
+.btn-text {
+  background-color: transparent;
+  color: $accent;
+  padding: $space-sm $space-md;
+  font-weight: $fw-reg;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $accent;
+    transition: width $duration-fast ease-in-out;
+  }
+
+  &:hover:not(:disabled) {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &:focus {
+    outline: 2px solid $accent;
+    outline-offset: 3px;
+  }
+}
+
+// ---- BUTTON SIZES ----
+.btn-sm {
+  padding: $space-sm $space-md;
+  font-size: $fs-sm;
+  border-radius: $br-md;
+}
+
+.btn-lg {
+  padding: $space-md $space-xl;
+  font-size: 1.125rem;
+  border-radius: 25px;
+}
+
+// ---- BUTTON BLOCK (Full Width) ----
+.btn-block {
+  display: block;
+  width: 100%;
+}

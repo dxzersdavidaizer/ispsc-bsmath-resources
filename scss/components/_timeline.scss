@@ -1,0 +1,55 @@
+// ============================================================================
+// COMPONENTS - Timeline component (enrollment steps)
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- STEPS TIMELINE ----
+.steps-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: $space-lg;
+  margin-top: $space-xl;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step-item {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-lg;
+  transition: border-color $duration-fast, transform $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    transform: translateY(-4px);
+  }
+
+  .step-number {
+    font-family: $ff-heading;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+    color: $accent;
+    opacity: 0.4;
+    margin-bottom: $space-sm;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.84rem;
+    color: $text-soft;
+  }
+}

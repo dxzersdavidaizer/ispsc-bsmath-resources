@@ -1,0 +1,101 @@
+// ============================================================================
+// PAGES - Contact page styles
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- CONTACT LAYOUT ----
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.contact-info {
+  h2 {
+    margin-top: $space-md;
+  }
+
+  > p {
+    font-size: 0.95rem;
+    color: $text-soft;
+    margin-bottom: $space-lg;
+  }
+}
+
+// ---- CONTACT ITEMS ----
+.contact-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: $space-md;
+  padding: $space-md 0;
+  border-bottom: 1px solid rgba($text-main, 0.1);
+  align-items: flex-start;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .contact-item-icon {
+    font-size: 1.4rem;
+    width: 36px;
+    height: 1.4rem;
+    text-align: center;
+    flex-shrink: 0;
+    object-fit: contain;
+    display: block;
+  }
+
+  h4 {
+    color: $text-main;
+    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+  }
+
+  p {
+    font-size: 0.87rem;
+    color: $text-soft;
+  }
+}
+
+// ---- MAP PLACEHOLDER ----
+.map-placeholder {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl * 1.5;
+  text-align: center;
+  margin-bottom: $space-lg;
+
+  .map-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: $space-sm;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  p {
+    color: $text-main;
+    font-weight: 600;
+  }
+
+  .map-sub {
+    color: $text-soft !important;
+    font-weight: 400 !important;
+    font-size: 0.85rem;
+  }
+}

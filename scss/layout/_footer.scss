@@ -1,0 +1,55 @@
+// ============================================================================
+// LAYOUT - Footer component
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.footer {
+  background-color: $surface-alt;
+  border-top: 1px solid $border;
+  padding: $space-xl * 2 0 0;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $space-xl;
+
+    @include respond-to('md') {
+      grid-template-columns: 1.2fr 1fr 1.3fr;
+    }
+  }
+
+  .footer-col {
+    h4 {
+      color: $text-main;
+      font-size: 0.95rem;
+      margin-bottom: $space-md;
+    }
+
+    p,
+    a {
+      font-size: 0.85rem;
+      color: $text-soft;
+      display: block;
+      margin-bottom: 0.35rem;
+      transition: color $duration-fast;
+    }
+
+    a:hover {
+      color: $accent;
+    }
+  }
+
+  .footer-bottom {
+    margin-top: $space-xl;
+    padding: $space-lg 0;
+    border-top: 1px solid $border;
+    text-align: center;
+
+    p {
+      font-size: 0.8rem;
+      color: $text-soft;
+    }
+  }
+}

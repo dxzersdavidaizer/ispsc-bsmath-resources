@@ -1,0 +1,97 @@
+// ============================================================================
+// UTILITIES - Helper classes for common patterns
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- GRADIENT UTILITIES ----
+
+// Primary gradients
+.gradient-primary {
+  @include gradient-bg($gradient-primary);
+}
+
+.gradient-primary-light {
+  @include gradient-bg($gradient-primary-light);
+}
+
+// Secondary gradients
+.gradient-secondary {
+  @include gradient-bg($gradient-secondary);
+}
+
+.gradient-secondary-light {
+  @include gradient-bg($gradient-secondary-light);
+}
+
+// Vibrant gradients
+.gradient-vibrant {
+  @include gradient-bg($gradient-vibrant);
+}
+
+.gradient-vibrant-reverse {
+  @include gradient-bg($gradient-vibrant-reverse);
+}
+
+// Neutral gradients
+.gradient-neutral {
+  @include gradient-bg($gradient-neutral);
+}
+
+.gradient-soft {
+  @include gradient-bg($gradient-soft);
+}
+
+// ---- GRADIENT TEXT ----
+.gradient-text {
+  background: $gradient-vibrant;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// ---- ADDITIONAL UTILITIES ----
+
+// Visibility utilities
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  display: block !important;
+}
+
+// Overflow utilities
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+// Opacity utilities
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+// ---- SCROLL REVEAL ANIMATION ----
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

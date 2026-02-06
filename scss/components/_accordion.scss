@@ -1,0 +1,112 @@
+// ============================================================================
+// COMPONENTS - Accordion component (FAQ, year tabs)
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- FAQ ACCORDION ----
+.accordion-item {
+  border-bottom: 1px solid $border;
+}
+
+.accordion-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: $space-md 0;
+  cursor: pointer;
+  color: $text-main;
+  font-family: $ff-body;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  transition: color $duration-fast;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.accordion-icon {
+  font-size: 1.3rem;
+  color: $accent;
+  transition: transform $duration-base;
+  flex-shrink: 0;
+  margin-left: $space-md;
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+  display: block;
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+.accordion-item.open .accordion-content {
+  max-height: 200px;
+  padding-bottom: $space-md;
+}
+
+.accordion-content p {
+  font-size: 0.9rem;
+  color: $text-soft;
+  line-height: 1.7;
+}
+
+// ---- YEAR TABS (Course Details) ----
+.year-tabs {
+  display: flex;
+  justify-content: center;
+  gap: $space-md;
+  flex-wrap: wrap;
+  margin-bottom: $space-xl;
+}
+
+.year-tab {
+  background-color: $surface;
+  border: 1px solid $border;
+  color: $text-soft;
+  padding: $space-sm $space-lg;
+  border-radius: 50px;
+  font-family: $ff-body;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $duration-fast;
+
+  &:hover,
+  &.active {
+    background-color: $accent;
+    color: $text-inverse;
+    border-color: $accent;
+  }
+}
+
+.year-panel {
+  display: none;
+  animation: fadeIn 0.35s ease;
+
+  &.active {
+    display: block;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,591 @@
+// ============================================================================
+// COMPONENTS - Card components (info chips, stat boxes, outcome cards, etc.)
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- BASE CARD STYLES ----
+.card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-lg;
+  transition: all $duration-base $easing-ease-in-out;
+  will-change: transform, box-shadow, border-color;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba($text-main, 0.15);
+    border-color: $accent;
+  }
+}
+
+// ---- INFO CHIPS (Course Details) ----
+.info-chip {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-md;
+  padding: $space-lg $space-md;
+  display: flex;
+  align-items: center;
+  gap: $space-md;
+  transition: border-color $duration-fast, box-shadow $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 4px 15px rgba($accent, 0.1);
+  }
+
+  .info-chip-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    display: block;
+  }
+
+  strong {
+    color: $text-main;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  div {
+    font-size: 0.85rem;
+    color: $text-soft;
+  }
+}
+
+// ---- STAT BOXES ----
+.stat-box {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-md;
+  text-align: center;
+  transition: border-color $duration-fast, box-shadow $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 8px 25px rgba($accent, 0.15);
+  }
+
+  .stat-number {
+    display: block;
+    font-family: $ff-heading;
+    font-size: 2.6rem;
+    color: $accent;
+    font-weight: $fw-bold;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.82rem;
+    color: $text-soft;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: $space-sm;
+  }
+}
+
+// ---- PREREQUISITE CARDS ----
+.prereq-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-lg;
+  position: relative;
+  transition: border-color $duration-fast, box-shadow $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 8px 25px rgba($accent, 0.15);
+  }
+
+  .prereq-num {
+    font-family: $ff-heading;
+    font-size: 2.4rem;
+    font-weight: $fw-bold;
+    color: $accent;
+    opacity: 0.25;
+    position: absolute;
+    top: $space-md;
+    right: $space-md;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: $text-soft;
+  }
+}
+
+// ---- OUTCOME CARDS ----
+.outcome-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-md;
+  text-align: center;
+  transition: border-color $duration-fast, transform $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    transform: translateY(-4px);
+  }
+
+  .outcome-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: $space-md;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 0.95rem;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.83rem;
+    color: $text-soft;
+  }
+}
+
+// ---- INSTRUCTOR CARDS ----
+.instructor-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-md;
+  text-align: center;
+  transition: border-color $duration-fast, box-shadow $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+    box-shadow: 0 8px 25px rgba($accent, 0.15);
+  }
+
+  .inst-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: $br-full;
+    margin: 0 auto $space-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: $fw-bold;
+    color: $text-inverse;
+    font-size: 0.85rem;
+  }
+
+  .inst-avatar-1 {
+    background: linear-gradient(135deg, darken($color-primary, 20%), darken($color-primary, 10%));
+  }
+
+  .inst-avatar-2 {
+    background: linear-gradient(135deg, darken($color-primary, 10%), $color-primary);
+  }
+
+  .inst-avatar-3 {
+    background: linear-gradient(135deg, $color-primary, lighten($color-primary, 10%));
+  }
+
+  .inst-avatar-4 {
+    background: linear-gradient(135deg, darken($color-secondary, 20%), darken($color-secondary, 10%));
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+  }
+
+  .inst-title {
+    color: $accent;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.84rem;
+    color: $text-soft;
+  }
+
+  .inst-tags {
+    display: flex;
+    gap: $space-xs;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: $space-md;
+  }
+
+  .inst-tags span {
+    background-color: rgba($accent, 0.1);
+    color: $accent;
+    padding: 0.2rem 0.6rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+  }
+}
+
+// ---- TESTIMONIAL CARDS ----
+.testi-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl;
+  position: relative;
+  transition: border-color $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  &.testi-featured {
+    grid-column: 1 / -1;
+    border-color: rgba($accent, 0.3);
+    background: linear-gradient(135deg, $surface, $surface-alt);
+  }
+
+  .testi-quote-icon {
+    font-family: $ff-heading;
+    font-size: 4rem;
+    color: $accent;
+    opacity: 0.25;
+    line-height: 0.6;
+    position: absolute;
+    top: $space-md;
+    left: $space-lg;
+  }
+
+  .testi-text {
+    font-size: 0.94rem;
+    color: $text-main;
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+    margin-top: $space-lg;
+  }
+
+  .testi-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: $br-full;
+    background: linear-gradient(135deg, darken($accent, 20%), $accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-inverse;
+    font-size: 0.75rem;
+    font-weight: $fw-bold;
+    flex-shrink: 0;
+  }
+
+  .testi-author strong {
+    color: $text-main;
+    font-size: 0.9rem;
+    display: block;
+  }
+
+  .testi-author span {
+    font-size: 0.78rem;
+    color: $text-soft;
+    display: block;
+  }
+
+  .testi-stars {
+    color: #f0c040;
+    font-size: 0.9rem;
+    margin-top: $space-md;
+    letter-spacing: 0.1em;
+  }
+}
+
+// ---- SUPPORT CARDS ----
+.support-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-lg;
+  text-align: center;
+  transition: border-color $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  .support-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: $br-full;
+    margin: 0 auto $space-md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, darken($accent, 20%), $accent);
+  }
+
+  .support-icon {
+    font-size: 1.8rem;
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: contain;
+  }
+
+  h3 {
+    color: $text-main;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.87rem;
+    color: $text-soft;
+  }
+
+  .support-detail {
+    margin-top: $space-md;
+    text-align: left;
+
+    p {
+      font-size: 0.83rem;
+    }
+  }
+}
+
+// ---- REMINDER CARDS ----
+.reminder-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-md;
+  text-align: center;
+
+  .reminder-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.84rem;
+    color: $text-soft;
+  }
+}
+
+// ---- WHY CARDS ----
+.why-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-lg;
+  text-align: center;
+
+  .why-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: $space-md;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $text-soft;
+  }
+}
+
+// ---- ACCOLADE ITEMS ----
+.accolade-item {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl $space-md;
+  text-align: center;
+
+  .accolade-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: $text-soft;
+  }
+}
+
+// ---- ADVISOR CARDS ----
+.advisor-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl;
+  text-align: center;
+
+  .advisor-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: $br-full;
+    background: linear-gradient(135deg, darken($accent, 20%), $accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-inverse;
+    font-weight: $fw-bold;
+    margin: 0 auto $space-md;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 1rem;
+  }
+
+  .advisor-role {
+    color: $accent;
+    font-size: 0.78rem;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  p {
+    font-size: 0.84rem;
+    color: $text-soft;
+  }
+}
+
+// ---- RESOURCE CARDS ----
+.resource-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-lg $space-md;
+  text-align: center;
+  transition: border-color $duration-fast;
+
+  &:hover {
+    border-color: $accent;
+  }
+
+  .resource-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: $space-sm;
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: contain;
+  }
+
+  h3 {
+    color: $text-main;
+    font-size: 0.92rem;
+    margin-bottom: $space-xs;
+  }
+
+  p {
+    font-size: 0.82rem;
+    color: $text-soft;
+  }
+}
+
+// ---- PROGRAM HEAD CARD ----
+.program-head-card {
+  display: flex;
+  gap: $space-xl;
+  align-items: center;
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl;
+  max-width: 780px;
+  margin: 0 auto;
+
+  @include respond-to('md') {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ph-avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: $br-full;
+    background: linear-gradient(135deg, darken($accent, 20%), $accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .ph-initials {
+    color: $text-inverse;
+    font-family: $ff-heading;
+    font-size: 2rem;
+    font-weight: $fw-bold;
+  }
+
+  .ph-info {
+    h3 {
+      color: $text-main;
+      font-size: 1.3rem;
+    }
+
+    .ph-badge {
+      display: inline-block;
+      background-color: rgba($accent, 0.12);
+      color: $accent;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 50px;
+      margin: $space-xs 0 $space-md;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: $text-soft;
+    }
+
+    .ph-tags {
+      display: flex;
+      gap: $space-sm;
+      flex-wrap: wrap;
+      margin-top: $space-md;
+    }
+
+    .ph-tags span {
+      background-color: rgba($accent, 0.1);
+      color: $accent;
+      padding: 0.25rem 0.7rem;
+      border-radius: 50px;
+      font-size: 0.78rem;
+    }
+  }
+}

@@ -1,0 +1,95 @@
+// ============================================================================
+// MIXINS - Reusable style patterns
+// ============================================================================
+
+/// Applies responsive padding
+/// @param {string} $padding - Padding value
+@mixin padding($padding) {
+  padding: $padding;
+}
+
+/// Applies responsive margin
+/// @param {string} $margin - Margin value
+@mixin margin($margin) {
+  margin: $margin;
+}
+
+/// Flexbox centering utility
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/// Applies animation with default parameters
+/// @param {string} $name - Animation name
+/// @param {string} $duration - Animation duration
+/// @param {string} $timing - Timing function
+/// @param {string} $fill - Fill mode
+@mixin animation($name, $duration: $duration-base, $timing: ease-in-out, $fill: forwards) {
+  animation: $name $duration $timing $fill;
+}
+
+/// Smooth transition
+/// @param {string} $properties - Properties to transition
+/// @param {string} $duration - Duration of transition
+@mixin transition($properties: all, $duration: $duration-fast) {
+  transition: $properties $duration ease-in-out;
+}
+
+// ============================================================================
+// RESPONSIVE DESIGN MIXINS
+// ============================================================================
+
+/// Mobile-first responsive breakpoint
+/// Usage: @include respond-to(md) { ... }
+/// @param {string} $breakpoint - Breakpoint name (sm, md, lg, xl, xxl)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'sm' {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == 'md' {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == 'lg' {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == 'xl' {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  } @else if $breakpoint == 'xxl' {
+    @media (min-width: $breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
+/// Container query alternative (for future use)
+/// @param {string} $size - Min width
+@mixin respond-to-width($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+// ============================================================================
+// GRADIENT MIXINS
+// ============================================================================
+
+/// Apply a gradient background
+/// @param {string} $gradient - Gradient value
+@mixin gradient-bg($gradient) {
+  background: $gradient;
+}
+
+/// Apply gradient with fallback color
+/// @param {string} $gradient - Gradient value
+/// @param {string} $fallback - Fallback solid color
+@mixin gradient-bg-fallback($gradient, $fallback: $color-primary) {
+  background-color: $fallback;
+  background: $gradient;
+}

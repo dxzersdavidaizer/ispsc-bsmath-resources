@@ -1,0 +1,104 @@
+// ============================================================================
+// PAGES - Testimonials page styles
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- STATS SECTION ----
+.stats-section {
+  background-color: $surface-alt;
+  border-bottom: 1px solid $border;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+  text-align: center;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  padding: $space-md;
+}
+
+.stat-big {
+  font-family: $ff-heading;
+  font-size: 2.6rem;
+  color: $accent;
+  font-weight: $fw-bold;
+  display: block;
+  line-height: 1;
+}
+
+.stat-desc {
+  font-size: 0.82rem;
+  color: $text-soft;
+  margin-top: 0.2rem;
+  display: block;
+}
+
+// ---- TESTIMONIAL GRID ----
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testi-featured {
+    @include respond-to('md') {
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+// ---- ACCOLADES ROW ----
+.accolades-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ---- CTA BANNER ----
+.cta-banner {
+  background: linear-gradient(135deg, $color-secondary-glance, lighten($color-secondary-glance, 5%));
+  border-top: 2px solid $color-secondary;
+  padding: $space-xl * 2 $space-lg;
+  text-align: center;
+
+  h2 {
+    font-family: $ff-heading;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    color: $text-main;
+    margin-bottom: $space-md;
+
+    .accent {
+      color: $color-secondary-deep;
+    }
+  }
+
+  p {
+    color: $text-soft;
+    max-width: 560px;
+    margin: 0 auto $space-lg;
+  }
+}

@@ -1,0 +1,156 @@
+// ============================================================================
+// PAGES - Course Details page styles
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- INFO ROW (Program Info Cards) ----
+.info-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-md;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// ---- PREREQUISITE GRID ----
+.prereq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ---- YEAR PANEL GRID ----
+.year-panel-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-xl;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.year-category {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl;
+
+  .cat-title {
+    color: $accent;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: $space-md;
+    padding-bottom: $space-md;
+    border-bottom: 1px solid $border;
+  }
+
+  .course-item {
+    display: flex;
+    justify-content: space-between;
+    padding: $space-sm 0;
+    border-bottom: 1px solid rgba($text-main, 0.1);
+    font-size: 0.92rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    .credits {
+      color: $accent;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+  }
+}
+
+// ---- INTERNSHIP SECTION ----
+.internship-details {
+  margin-top: $space-lg;
+}
+
+.internship-item {
+  display: flex;
+  gap: $space-md;
+  align-items: flex-start;
+  padding: $space-md 0;
+  border-bottom: 1px solid rgba($text-main, 0.1);
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .internship-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    object-fit: contain;
+    display: block;
+  }
+
+  strong {
+    color: $text-main;
+    display: block;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: $text-soft;
+    margin-top: 0.2rem;
+  }
+}
+
+.internship-card-stack {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.i-card {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-md;
+  padding: $space-md $space-lg;
+  font-size: 0.95rem;
+  color: $text-main;
+  transition: transform $duration-fast, border-color $duration-fast;
+
+  &:hover {
+    transform: translateX(8px);
+    border-color: $accent;
+  }
+}
+
+// ---- OUTCOMES GRID ----
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $space-lg;
+
+  @include respond-to('md') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include respond-to('lg') {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

@@ -1,0 +1,26 @@
+// ============================================================================
+// PAGES - FAQ page styles
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- FAQ CONTAINER ----
+.faq-container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.faq-category-title {
+  color: $accent;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin: $space-xl 0 $space-md;
+  padding-bottom: $space-sm;
+  border-bottom: 1px solid $border;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}

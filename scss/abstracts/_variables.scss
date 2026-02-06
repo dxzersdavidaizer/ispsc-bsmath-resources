@@ -1,0 +1,90 @@
+// ============================================================================
+// VARIABLES - All design tokens, colors, typography, spacing, etc.
+// ============================================================================
+
+// ---- COLOR VARIABLES ----
+// Primitives
+$color-primary: #e53935;
+$color-primary-glance: #ffebee;
+$color-primary-deep: #c62828;
+
+$color-secondary: #50c878;
+$color-secondary-glance: #e8f5e9;
+$color-secondary-deep: #2e7d32;
+
+$color-white: #ffffff;
+$color-black: #1a1a1a; // Soft black is better for eyes
+$color-gray-100: #f5f5f5;
+$color-gray-300: #e0e0e0;
+$color-gray-500: #757575;
+
+// Semantic Tokens
+$surface: $color-white;
+$surface-alt: $color-gray-100;
+
+$text-main: $color-black;
+$text-soft: $color-gray-500;
+$text-inverse: $color-white;
+
+$border: $color-gray-300;
+$accent: $color-primary;
+$success: $color-secondary;
+
+// ---- TYPOGRAPHY VARIABLES ----
+$ff-heading: 'Zing Sans Rust', 'Impact', sans-serif;
+$ff-body: 'Montserrat', sans-serif;
+
+$fs-h1: 3rem;
+$fs-h2: 2.25rem;
+$fs-base: 1rem;
+$fs-sm: 0.875rem;
+
+$fw-bold: 700;
+$fw-reg: 400;
+
+// ---- SPACING VARIABLES ----
+$space-xs: 0.25rem; // 4px
+$space-sm: 0.5rem;  // 8px
+$space-md: 1rem;    // 16px
+$space-lg: 1.5rem;  // 24px
+$space-xl: 3rem;    // 48px
+
+// ---- BORDER RADIUS VARIABLES ----
+$br-sm: 5px;
+$br-md: 10px;
+$br-lg: 20px;
+$br-full: 50%;
+
+// ---- ANIMATION VARIABLES ----
+$duration-fast: 0.3s;
+$duration-base: 0.5s;
+$duration-slow: 1s;
+
+$easing-ease-out: ease-out;
+$easing-ease-in-out: ease-in-out;
+$easing-linear: linear;
+
+// ---- GRADIENT VARIABLES ----
+// Primary gradients
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-primary-deep 100%);
+$gradient-primary-light: linear-gradient(135deg, $color-primary 0%, $color-primary-glance 100%);
+
+// Secondary gradients
+$gradient-secondary: linear-gradient(135deg, $color-secondary 0%, $color-secondary-deep 100%);
+$gradient-secondary-light: linear-gradient(135deg, $color-secondary 0%, $color-secondary-glance 100%);
+
+// Vibrant gradients
+$gradient-vibrant: linear-gradient(135deg, $color-primary 0%, $color-secondary 100%);
+$gradient-vibrant-reverse: linear-gradient(135deg, $color-secondary 0%, $color-primary 100%);
+
+// Neutral gradients
+$gradient-neutral: linear-gradient(135deg, $text-main 0%, $text-soft 100%);
+$gradient-soft: linear-gradient(135deg, $surface-alt 0%, $surface 100%);
+
+// ---- RESPONSIVE BREAKPOINTS ----
+// Mobile-first approach: base styles for mobile, then add breakpoints
+$breakpoint-sm: 576px;   // Small devices (landscape phones)
+$breakpoint-md: 768px;   // Medium devices (tablets)
+$breakpoint-lg: 992px;   // Large devices (desktops)
+$breakpoint-xl: 1200px;  // Extra large devices (large desktops)
+$breakpoint-xxl: 1400px; // XXL devices (ultra-wide screens)

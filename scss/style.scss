@@ -1,0 +1,75 @@
+// ============================================================================
+// MAIN STYLESHEET - 7-1 Pattern Architecture
+// ============================================================================
+// Import order matters!
+// 1. Abstracts (variables, functions, mixins) - no CSS output
+// 2. Vendors (third-party code)
+// 3. Base (resets, typography, base styles)
+// 4. Layout (grid, navbar, containers)
+// 5. Components (reusable UI elements)
+// 6. Pages (page-specific styles)
+// 7. Themes (theme variations)
+
+// ============================================================================
+// 1. ABSTRACTS - Variables, mixins, functions (no CSS output)
+// ============================================================================
+
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// ============================================================================
+// 2. VENDORS - Third-party stylesheets
+// ============================================================================
+// (Add vendor imports here if needed)
+// @import 'vendors/bootstrap';
+
+// ============================================================================
+// 3. BASE - Reset, typography, base element styles
+// ============================================================================
+
+@import 'base/reset';
+@import 'base/typography';
+
+// ============================================================================
+// 4. LAYOUT - Page structure, grid, header, footer, navbar, etc.
+// ============================================================================
+
+@import 'layout/grid';
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/page-header';
+
+// ============================================================================
+// 5. COMPONENTS - Reusable UI components, buttons, cards, etc.
+// ============================================================================
+
+@import 'components/animations';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/accordion';
+@import 'components/timeline';
+
+// ============================================================================
+// 6. PAGES - Page-specific styles
+// ============================================================================
+@import 'pages/home';
+@import 'pages/course-details';
+@import 'pages/instructors';
+@import 'pages/testimonials';
+@import 'pages/faq';
+@import 'pages/enrollment';
+@import 'pages/support';
+@import 'pages/contact';
+
+// ============================================================================
+// 7. THEMES - Theme variations, dark mode, etc.
+// ============================================================================
+// @import 'themes/dark';
+// @import 'themes/light';
+
+// ============================================================================
+// 8. UTILITIES - Helper classes and utilities
+// ============================================================================
+
+@import 'utilities/utilities';

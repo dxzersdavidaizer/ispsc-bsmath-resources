@@ -1,0 +1,58 @@
+// ============================================================================
+// LAYOUT - Page header (used on all inner pages)
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.page-header {
+  position: relative;
+  padding: 8rem 1.6rem 4rem;
+  text-align: center;
+  overflow: hidden;
+  background-color: $surface;
+
+  .page-header-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba($accent, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($accent, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-secondary-deep;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  .page-title {
+    font-family: $ff-heading;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    color: $text-main;
+    margin-bottom: 0.7rem;
+    line-height: 1.2;
+
+    .accent {
+      color: $color-secondary-deep;
+    }
+  }
+
+  .page-desc {
+    color: $text-soft;
+    font-size: 1.05rem;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+}

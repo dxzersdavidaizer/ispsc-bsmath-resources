@@ -1,0 +1,76 @@
+// ============================================================================
+// COMPONENTS - Form components (inputs, textareas, labels, contact form)
+// ============================================================================
+
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+// ---- FORM GROUP ----
+.form-group {
+  margin-bottom: $space-md;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  color: $text-soft;
+  margin-bottom: $space-xs;
+  font-weight: 500;
+}
+
+// ---- FORM INPUTS ----
+.form-input {
+  width: 100%;
+  padding: $space-md $space-md;
+  background-color: $surface-alt;
+  border: 1px solid $border;
+  border-radius: $br-md;
+  color: $text-main;
+  font-family: $ff-body;
+  font-size: 0.9rem;
+  transition: border-color $duration-fast;
+  outline: none;
+
+  &:focus {
+    border-color: $accent;
+    outline: 2px solid rgba($accent, 0.2);
+    outline-offset: 2px;
+  }
+
+  &::placeholder {
+    color: $text-soft;
+    opacity: 0.5;
+  }
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+  font-family: $ff-body;
+}
+
+// ---- FORM NOTE ----
+.form-note {
+  color: $accent;
+  font-size: 0.84rem;
+  margin-top: $space-md;
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+}
+
+// ---- CONTACT FORM BOX ----
+.contact-form-box {
+  background-color: $surface;
+  border: 1px solid $border;
+  border-radius: $br-lg;
+  padding: $space-xl;
+
+  h3 {
+    color: $text-main;
+    margin-bottom: $space-lg;
+    font-size: 1.15rem;
+  }
+}
